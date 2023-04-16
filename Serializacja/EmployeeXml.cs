@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Serializacja
 {
     [Serializable]
-    internal class Employee
+    public class EmployeeXml
     {
+        [XmlAttribute("id")]
         public int Id { get; set; }
+
+        [XmlElement("Imie")]
         public string FirstName { get; set; }
+
+        [XmlElement("Nazwisko")]
         public string LastName { get; set; }
-        public bool IsMenager { get; set; }
+        public bool? IsMenager { get; set; }
         public List<int> AccessRooms { get; set; }
-        public List<string> ExtraData { get; set; } 
+
+        [XmlIgnore]
+        public List<string> ExtraData { get; set; }
         public DateTime StartAt { get; set; }
 
         private string Token;

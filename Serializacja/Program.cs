@@ -10,7 +10,9 @@ namespace Serializacja
     {
         static void Main(string[] args)
         {
-            BinarySerializer.Create();
+           // BinarySerializer.Create();
+           // SoapSerializer.Create();
+            SerializerXml.Create();
         }
     }
 }
